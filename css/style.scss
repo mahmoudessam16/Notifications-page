@@ -1,0 +1,147 @@
+// Variables
+$Red: hsl(1, 90%, 64%);
+$Blue: hsl(219, 85%, 26%);
+$White: hsl(0, 0%, 100%);
+$Verylightgrayishblue: hsl(210, 60%, 98%);
+$Lightgrayishblue1: hsl(211, 68%, 94%);
+$Lightgrayishblue2: hsl(205, 33%, 90%);
+$Grayishblue: hsl(219, 14%, 63%);
+$Darkgrayishblue: hsl(219, 12%, 42%);
+$Verydarkblue: hsl(224, 21%, 14%);
+$size: 16px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: $Verylightgrayishblue;
+    .container {
+        width: 50%;
+        margin: 60px auto;
+        background-color: $White;
+        padding: 20px 20px 0 20px;
+        border-radius: 10px;
+        .one {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1 {
+                color: $Verydarkblue;
+                .numberNf {
+                    background-color: $Blue;
+                    color: $Lightgrayishblue1;
+                    font-size: 15px;
+                    padding: 3px 10px;
+                    border-radius: 5px;
+                    margin-left: 8px;
+                }
+            }
+            p {
+                color: $Verydarkblue;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover {
+                    color: $Blue;
+                }
+            }
+        }
+        .notifications {
+            margin: 20px 0;
+            .notification {
+                display: flex;
+                margin: 10px 0;
+                align-items: center;
+                padding: 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                > img {
+                    width: 40px;
+                    margin-right: 15px;
+                }
+                .info {
+                    p {
+                        font-size: 15px;
+                        color: $Darkgrayishblue;
+                        .name {
+                            color: $Verydarkblue;
+                            font-weight: bold;
+                            transition: 0.3s;
+                            &:hover {
+                                color: $Blue;
+                            }
+                        }
+                        .text {
+                            color: $Verydarkblue;
+                            font-weight: 800;
+                            transition: 0.3s;
+                            &:hover {
+                                color: $Blue;
+                            }
+                        }
+                    }
+                    .time {
+                        font-size: 14px;
+                        color: $Grayishblue;
+                    }
+                }
+                #special {
+                    margin-left: auto;
+                }
+            }
+            .notification.special {
+                align-items: flex-start;
+                p.message {
+                    font-size: 15px;
+                    border: 1px solid $Lightgrayishblue2;
+                    padding: 15px;
+                    margin-top: 10px;
+                    transition: 0.3s;
+                    &:hover {
+                        background-color: $Lightgrayishblue2;
+                    }
+                }
+            }
+        }
+    }
+}
+.read {
+    background-color: $Verylightgrayishblue;
+    .info {
+        p {
+            .dot {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-color: $Red;
+                border-radius: 50%;
+                margin-left: 2px;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 100% !important;
+        margin: 0 !important;
+        .one {
+            h1 {
+                font-size: 20px;
+                .numberNf {
+                    margin-left: 1px !important;
+                }
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        .notifications {
+            .notification {
+                align-items: flex-start !important;
+            }
+        }
+    }
+}
